@@ -1,4 +1,6 @@
 # ETL Project 
+
+[![CI](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml/badge.svg)](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml)
 ![Code Coverage](https://img.shields.io/badge/Coverage-92%25-green.svg)
 
 ## Requirements
