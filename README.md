@@ -5,9 +5,9 @@
 
 ## Requirements
 Project uses a number of open source projects to work properly:
-- [MySQL] - For run sql query and store data
-- [Python] - Main programming language that lets project run effectively.
-- [MySQL Workbench] - Manipulate with database, and show data
+- [MySQL](https://www.mysql.com) - For run sql query and store data
+- [Python](https://www.python.org) - Main programming language that lets project run effectively.
+- [MySQL Workbench](https://www.mysql.com/products/workbench) - Manipulate with database, and show data
 ---
 
 ## Project Folder
