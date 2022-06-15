@@ -45,6 +45,7 @@ jobs:
         coveralls --service=github
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_COVERALLS_DEBUG=1
   coveralls:
     name: Indicate completion to coveralls.io
     needs: build
@@ -57,3 +58,4 @@ jobs:
         coveralls --service=github --finish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_COVERALLS_DEBUG=1
