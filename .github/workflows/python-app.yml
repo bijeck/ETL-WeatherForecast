@@ -38,6 +38,7 @@ jobs:
       run: |
         pytest
     - name: Coverage
+      uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
       run: |
