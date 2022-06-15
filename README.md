@@ -1,7 +1,7 @@
 # ETL Project 
 
 [![CI](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml/badge.svg)](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml)
-[![Coverage Status](https://coveralls.io/repos/github/bijeck/ETL-WeatherForecast/badge.svg?branch=main)](https://coveralls.io/github/bijeck/ETL-WeatherForecast?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/bijeck/ETL-WeatherForecast/badge.svg)](https://coveralls.io/github/bijeck/ETL-WeatherForecast)
 
 ## Requirements
 Project uses a number of open source projects to work properly:
