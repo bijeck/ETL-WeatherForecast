@@ -34,22 +34,27 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
-        coverage run -m pytest
-        coverage report
-        coverage xml
-    - name: Coverage
-      run: |
-        pip install coveralls
-        coverage run --source=mypkg -m pytest tests/
-        coveralls --service=github
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  test:
+    strategy:
+      matrix:
+        test-name:
+          - test1
+          - test2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test
+        run: ./run_tests.sh ${{ matrix.test-name }}
+      - name: Upload coverage data to coveralls.io
+        run: coveralls --service=github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
+          COVERALLS_PARALLEL: true
   coveralls:
     name: Indicate completion to coveralls.io
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     container: python:3-slim
     steps:
