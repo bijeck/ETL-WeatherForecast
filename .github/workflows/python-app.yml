@@ -49,7 +49,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   coveralls:
     name: Indicate completion to coveralls.io
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     container: python:3-slim
     steps:
