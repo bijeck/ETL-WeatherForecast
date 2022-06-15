@@ -36,23 +36,17 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
   test:
     needs: build
-    strategy:
-      matrix:
-        test-name:
-          - test1
-          - test2
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Test
-        run: ./run_tests.sh ${{ matrix.test-name }}
+        run: 
+          coverage run -m pytest
+          coverage report
+          coverage xml
       - name: Upload coverage data to coveralls.io
         run: coveralls --service=github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_FLAG_NAME: ${{ matrix.test-name }}
-          COVERALLS_PARALLEL: true
   coveralls:
     name: Indicate completion to coveralls.io
     needs: test
