@@ -1,8 +1,4 @@
-# ETL Project - SuMP - Done
-
-
-[![pipeline status](https://gitlab.com/bijecksuzz/etl_weather/badges/main/pipeline.svg)](https://gitlab.com/bijecksuzz/etl_weather/-/commits/main)
-[![coverage report](https://gitlab.com/bijecksuzz/etl_weather/badges/main/coverage.svg)](https://gitlab.com/bijecksuzz/etl_weather/-/commits/main)
+# ETL Project 
 
 
 ## Requirements
@@ -125,16 +121,3 @@ You can use `database.sql` file to create database and it contains data for you.
 > Note: Rename `database name` in the file with your prefer `name`.
 
 ---
-## Task done
-
-- Using python to call API
-- Understand the data and create schema for it
-- Create schema in sql using python connector (using MySQL)
-- Connect to sql and ETL data
-- Create schedule for calling api and load SCD to track historical data
-- Create Unitest with pytest
-- Create CI pineline
-
-   [MySQL]: <https://www.mysql.com/>
-   [Python]: <https://www.python.org/>
-   [MySQL Workbench]: <https://www.mysql.com/products/workbench/>
