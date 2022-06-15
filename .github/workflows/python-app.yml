@@ -37,10 +37,25 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+        coverage run -m pytest
+        coverage report
+        coverage xml
     - name: Coverage
       run: |
         pip install coveralls
         coverage run --source=mypkg -m pytest tests/
         coveralls --service=github
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  coveralls:
+    name: Indicate completion to coveralls.io
+    needs: test
+    runs-on: ubuntu-latest
+    container: python:3-slim
+    steps:
+    - name: Finished
+      run: |
+        pip3 install --upgrade coveralls
+        coveralls --service=github --finish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
