@@ -1,5 +1,5 @@
 # ETL Project 
-
+![Code Coverage](https://img.shields.io/badge/Coverage-92%25-green.svg)
 
 ## Requirements
 Project uses a number of open source projects to work properly:
