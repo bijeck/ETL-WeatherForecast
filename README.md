@@ -16,6 +16,7 @@ Project uses a number of open source projects to work properly:
 - `tests/etl` : contains etl tests files
 - `config.json`: contains configuration for `MySQL` server
 - `requirements.txt`: list python requirement packages
+- `.github/workflows/python-app.yml`: file for run CI in github
 - `database.sql`: database script
 - `weather_schema.png`: database weather schema
 ---
@@ -47,7 +48,7 @@ Then active the virtual environment and install the packages:
 ## Installation 
 Install python packages to run project effectively:
 ```sh
->> pip install -r requirement.txt
+>> pip install -r requirements.txt
 ```
 ---
 ## Configuration
