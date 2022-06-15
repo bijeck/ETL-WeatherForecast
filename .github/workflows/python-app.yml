@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test
-        run: 
+        run: |
           coverage run -m pytest
           coverage report
           coverage xml
