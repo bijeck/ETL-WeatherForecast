@@ -37,10 +37,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Test with coverage
-      run: |
-        pip install readme-coverage-badger
-        coverage run -m pytest
-        coverage report
-        coverage xml
-        readme-cov
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}

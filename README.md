@@ -1,7 +1,6 @@
 # ETL Project 
 
 [![CI](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml/badge.svg)](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml)
-![Code Coverage]()
 
 ## Requirements
 Project uses a number of open source projects to work properly:
