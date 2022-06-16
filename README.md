@@ -1,8 +1,15 @@
-# ETL Project 
+# ETL Weather Forecast
 
 [![CI](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml/badge.svg)](https://github.com/bijeck/ETL-WeatherForecast/actions/workflows/python-app.yml)
 [![Coverage Status](https://coveralls.io/repos/github/bijeck/ETL-WeatherForecast/badge.svg)](https://coveralls.io/github/bijeck/ETL-WeatherForecast)
 [![Python 3.6](https://img.shields.io/badge/python-3.10.0-blue.svg)](https://www.python.org/downloads/release/python-3100/)
+
+## Introduction
+
+Python ETL Pineline craws data from Weather Forecast, transforms and loads to MySQL.
+
+Authors: [Bijeck](https://github.com/bijeck)
+
 
 ## Requirements
 Project uses a number of open source projects to work properly:
