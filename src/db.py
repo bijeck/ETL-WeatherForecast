@@ -1,17 +1,7 @@
-from asyncio import set_event_loop
 import mysql.connector
 from mysql.connector import Error
-import json
-import os
+from utilities import read_config
 
-from requests import patch
-
-
-def read_config():
-    path = os.path.abspath(".\config.json")
-    with open(path) as f:
-        config = json.load(f)
-    return config
 
 
 def create_connection():
@@ -50,43 +40,46 @@ def create_database():
 def create_table(conn):
     try:
         create_citydim_table_query = """CREATE TABLE IF NOT EXISTS CITY_DIM ( 
-                                 CITY_ID INT NOT NULL,
-                                 NAME VARCHAR(30) NOT NULL,
-                                 COUNTRY_NAME VARCHAR(15) NOT NULL,
-                                 TIMEZONE INT NOT NULL,
-                                 LAT FLOAT NOT NULL,
-                                 LON FLOAT NOT NULL,
-                                 PRIMARY KEY (CITY_ID)) """
+                                                                            CITY_ID INT NOT NULL,
+                                                                            NAME VARCHAR(30) NOT NULL,
+                                                                            COUNTRY_NAME VARCHAR(15) NOT NULL,
+                                                                            TIMEZONE INT NOT NULL,
+                                                                            LAT FLOAT NOT NULL,
+                                                                            LON FLOAT NOT NULL,
+                                                                            PRIMARY KEY (CITY_ID))
+                                    """
         create_weatherfact_table_query = """CREATE TABLE IF NOT EXISTS WEATHER_FACT ( 
-                                         CITY_ID INT NOT NULL,
-                                         STATUS_ID INT NOT NULL,
-                                         DT DATETIME NOT NULL,
-                                         TEMP FLOAT NOT NULL,
-                                         REAL_TEMP FLOAT NOT NULL,
-                                         TEMP_MIN FLOAT NOT NULL,
-                                         TEMP_MAX FLOAT NOT NULL,
-                                         PRESSURE FLOAT DEFAULT 0,
-                                         HUMIDITY FLOAT DEFAULT 0,
-                                         SEA_LEVEL FLOAT DEFAULT 0,
-                                         GRND_LEVEL FLOAT DEFAULT 0,
-                                         VISIBILITY FLOAT DEFAULT 0,
-                                         CLOUD FLOAT DEFAULT 0,
-                                         RAIN FLOAT DEFAULT 0,
-                                         WIND_SPEED FLOAT DEFAULT 0,
-                                         WIND_DEG FLOAT DEFAULT 0,
-                                         WIND_GUST FLOAT DEFAULT 0,
-                                         SUNRISE DATETIME NOT NULL,
-                                         SUNSET DATETIME NOT NULL,
-                                         CURRENT_FLAG VARCHAR(1) NOT NULL,
-                                         PRIMARY KEY (CITY_ID,STATUS_ID),
-                                         FOREIGN KEY (CITY_ID) REFERENCES CITY_DIM(CITY_ID),
-                                         FOREIGN KEY (STATUS_ID) REFERENCES STATUS_DIM(STATUS_ID)) """
+                                                                                    CITY_ID INT NOT NULL,
+                                                                                    STATUS_ID INT NOT NULL,
+                                                                                    DT DATETIME NOT NULL,
+                                                                                    TEMP FLOAT NOT NULL,
+                                                                                    REAL_TEMP FLOAT NOT NULL,
+                                                                                    TEMP_MIN FLOAT NOT NULL,
+                                                                                    TEMP_MAX FLOAT NOT NULL,
+                                                                                    PRESSURE FLOAT DEFAULT 0,
+                                                                                    HUMIDITY FLOAT DEFAULT 0,
+                                                                                    SEA_LEVEL FLOAT DEFAULT 0,
+                                                                                    GRND_LEVEL FLOAT DEFAULT 0,
+                                                                                    VISIBILITY FLOAT DEFAULT 0,
+                                                                                    CLOUD FLOAT DEFAULT 0,
+                                                                                    RAIN FLOAT DEFAULT 0,
+                                                                                    WIND_SPEED FLOAT DEFAULT 0,
+                                                                                    WIND_DEG FLOAT DEFAULT 0,
+                                                                                    WIND_GUST FLOAT DEFAULT 0,
+                                                                                    SUNRISE DATETIME NOT NULL,
+                                                                                    SUNSET DATETIME NOT NULL,
+                                                                                    CURRENT_FLAG VARCHAR(1) NOT NULL,
+                                                                                    PRIMARY KEY (CITY_ID,STATUS_ID),
+                                                                                    FOREIGN KEY (CITY_ID) REFERENCES CITY_DIM(CITY_ID),
+                                                                                    FOREIGN KEY (STATUS_ID) REFERENCES STATUS_DIM(STATUS_ID))
+                                        """
         create_statusdim_table_query = """CREATE TABLE IF NOT EXISTS STATUS_DIM ( 
-                                         STATUS_ID INT NOT NULL AUTO_INCREMENT,
-                                         TITLE VARCHAR(30) NOT NULL,
-                                         ICON VARCHAR(15) NOT NULL,
-                                         DESCRIPTION VARCHAR(100) NOT NULL,
-                                         PRIMARY KEY (STATUS_ID))"""
+                                                                                STATUS_ID INT NOT NULL AUTO_INCREMENT,
+                                                                                TITLE VARCHAR(30) NOT NULL,
+                                                                                ICON VARCHAR(15) NOT NULL,
+                                                                                DESCRIPTION VARCHAR(100) NOT NULL,
+                                                                                PRIMARY KEY (STATUS_ID))
+                                        """
 
         cursor = conn.cursor()
         cursor.execute(create_citydim_table_query)

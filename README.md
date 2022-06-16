@@ -9,6 +9,10 @@ Project uses a number of open source projects to work properly:
 - [MySQL](https://www.mysql.com) - For run sql query and store data
 - [Python](https://www.python.org) - Main programming language that lets project run effectively.
 - [MySQL Workbench](https://www.mysql.com/products/workbench) - Manipulate with database, and show data
+
+You should sign up your account in [RapiAPI](https://rapidapi.com) and subcribe to [Weather Map API](https://rapidapi.com/community/api/open-weather-map/).
+
+
 ---
 
 ## Project Folder
@@ -62,6 +66,13 @@ Configure your MySQL server in `config.json`:
 | `user` | root|
 | `password` | yourpassword |
 | `database` | databasename|
+
+Configure your `X-RapidAPI-Key` from [Weather Map API](https://rapidapi.com/community/api/open-weather-map/) in `config.json` to able run appication:
+
+| Key | Value |
+| ------ | ------ |
+| `X-RapidAPI-Key` | key |
+
 ---
 ## Run Project
 Create database and table:

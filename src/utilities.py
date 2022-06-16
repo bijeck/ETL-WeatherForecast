@@ -1,7 +1,6 @@
-# import the time module
 import time
-
-# define the countdown func.
+import json
+import os
 
 
 def countdown(t):
@@ -11,3 +10,9 @@ def countdown(t):
         print(timer, end="\r")
         time.sleep(1)
         t -= 1
+
+def read_config():
+    path = os.path.abspath(".\config.json")
+    with open(path) as f:
+        config = json.load(f)
+    return config
