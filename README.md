@@ -21,7 +21,7 @@ You should sign up your account in [RapiAPI](https://rapidapi.com) and subcribe 
 - `src/etl` : contains etl files
 - `tests` : contains tests files
 - `tests/etl` : contains etl tests files
-- `config.json`: contains configuration for `MySQL` server
+- `config.json`: contains configuration for `MySQL` server and `X-RapidAPI-Key` from [Weather Map API](https://rapidapi.com/community/api/open-weather-map/)
 - `requirements.txt`: list python requirement packages
 - `.github/workflows/python-app.yml`: file for run CI in github
 - `database.sql`: database script
@@ -67,7 +67,7 @@ Configure your MySQL server in `config.json`:
 | `password` | yourpassword |
 | `database` | databasename|
 
-Configure your `X-RapidAPI-Key` from [Weather Map API](https://rapidapi.com/community/api/open-weather-map/) in `config.json` to able run appication:
+Configure your c from [Weather Map API](https://rapidapi.com/community/api/open-weather-map/) in `config.json` to able run appication:
 
 | Key | Value |
 | ------ | ------ |
