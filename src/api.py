@@ -1,5 +1,8 @@
 import requests
-from utilities import read_config
+try:
+    from utilities import read_config
+except ImportError:
+    from src.utilities import read_config
 
 
 def get_location_current_weather_data(location):
