@@ -12,7 +12,7 @@ def countdown(t):
         t -= 1
 
 def read_config():
-    path = os.path.abspath(".\config.json")
+    path = os.path.abspath("config.json")
     with open(path) as f:
         config = json.load(f)
     return config
