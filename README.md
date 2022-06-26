@@ -10,7 +10,16 @@ Python ETL Pineline craws data from Weather Forecast, transforms and loads to My
 
 Authors: [Bijeck](https://github.com/bijeck)
 
+---
+## Technicals
+- Mock
+- MySQL
+- CI Python Code Validation
+- Dimensional Model
+- Pytest
 
+
+---
 ## Requirements
 Project uses a number of open source projects to work properly:
 - [MySQL](https://www.mysql.com) - For run sql query and store data
@@ -39,22 +48,23 @@ You should sign up your account in [RapiAPI](https://rapidapi.com) and subcribe 
 
 Be Sure you have Virtulenv installed if not running below:
 ```sh
->> pip install virtualenv
+pip install virtualenv
 ```
 
 After unzip the project, create a virtual environment with the following:
 ```sh
->> cd ETL_SuMP
->> virtualenv venv
+cd ETL_SuMP
+
+virtualenv venv
 ```
 
 Then active the virtual environment and install the packages:
 ```sh
 # For Mac or Linux
->> source venv/bin/activate
+source venv/bin/activate
 
 # For windows
->> venv\Scripts\activate.bat
+venv\Scripts\activate.bat
 ```
 
 ---
@@ -62,7 +72,7 @@ Then active the virtual environment and install the packages:
 ## Installation 
 Install python packages to run project effectively:
 ```sh
->> pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ---
 ## Configuration
@@ -74,7 +84,7 @@ Configure your MySQL server in `config.json`:
 | `password` | yourpassword |
 | `database` | databasename|
 
-Configure your c from [Weather Map API](https://rapidapi.com/community/api/open-weather-map/) in `config.json` to able run appication:
+Configure your API-key from [Weather Map API](https://rapidapi.com/community/api/open-weather-map/) in `config.json` to able run appication:
 
 | Key | Value |
 | ------ | ------ |
@@ -84,15 +94,15 @@ Configure your c from [Weather Map API](https://rapidapi.com/community/api/open-
 ## Run Project
 Create database and table:
 ```sh
->> python src\db.py
+python src\db.py
 ```
 Run project:
 ```sh
->> python src\main.py
+python src\main.py
 ```
 Enter your location to fetch data:
 ```sh
->> Enter your location: london
+Enter your location: london
 ```
 
 Your location 's data will countinue get after 30 seconds.
@@ -105,22 +115,17 @@ You can terminate the project by press in your keyboard:
 
 Run test:
 ```sh
->> pytest -v
+pytest -v
 ```
 
 Run test with keywords( Examples: `get`,`extract`,`transform`,`error`):
 ```sh
->> pytest -k keywords -v
-```
-
-Run to see coverage results:
-```sh
->> coverage report
+pytest -k keywords -v
 ```
 
 Run to see coverage all project results:
 ```sh
->> pytest --cov=. tests/
+coverage run -m pytest
 ```
 
 ---
